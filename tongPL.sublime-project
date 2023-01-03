@@ -1,0 +1,42 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Python + virtualenv",
+			"selector": "source.python",
+			"shell_cmd": "set PYTHONPATH=$folder & \"/home/wuyu/.local/share/virtualenvs/aog-O-BdYBlq/bin/python\" -u \"$file\"",
+		},
+
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "lua builder",
+			"selector": "source.lua",
+			"shell_cmd": "\"lua\" \"$file\"",
+			"working_dir": "$folder",
+		},
+
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "nodejs builder",
+			"selector": "source.js",
+			"shell_cmd": "\"node\" \"$file\"",
+			"working_dir": "$folder",
+		},
+
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			/*"cmd": "set PYTHONPATH=$folder & \"/Users/yuwu/miniforge3/bin/python\" -u \"$file\"",*/
+			"shell_cmd": "\"python3\" -u \"$file\"",
+			/*"working_dir": "$folder",*/
+		},
+	],
+	"folders":
+	[
+		{
+			"path": "aog",
+		}
+	],
+}
